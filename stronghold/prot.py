@@ -10,10 +10,9 @@ def prot():
     for word in line.split():
       if keycheck:
         last = word
-        keycheck = not keycheck
       else:
         rna[last] = word
-        keycheck = not keycheck
+      keycheck = not keycheck  
   fin.close()
 
   #now load and translate the RNA string
