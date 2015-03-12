@@ -79,9 +79,3 @@ def read_RNA_table():
   fin.close()
 
   return convert
-
-
-
-
-
-
