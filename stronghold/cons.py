@@ -2,15 +2,20 @@ def cons():
   fin = open("rosalind_cons.txt")
   data = []
 
+  #TODO: clean up reading in DNA strings
+  dna = []
   for line in fin:
     line = line.replace('\n', '')
     if line[0:1] == '>':
-      continue
+      if dna != []: 
+        data.append(dna)
+      dna = []   
     else:
-      dna = []
       for c in list(line):
         dna.append(c)
-      data.append(dna)
+  if dna != []: 
+    data.append(dna)
+
   fin.close()
 
   """
