@@ -1,3 +1,3 @@
 # Rosalind
 
-http://rosalind.info/
+http://rosalind.info/users/dieterjoubert/
