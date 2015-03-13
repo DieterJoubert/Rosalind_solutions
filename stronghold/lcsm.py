@@ -1,4 +1,6 @@
 def lcsm():
+  """The downright dirty naive way to find longest common substrings
+  TODO: is there a better way to implement this? suffix tree?"""
   fin = open("rosalind_lcsm.txt")
   strings = []
 
