@@ -11,7 +11,7 @@ def orf():
   RNA = DNA.replace('T','U')
   results = transcript(RNA)
 
-  rev = reverse_compliment_RNA(RNA)
+  rev = reverse_complement_RNA(RNA)
   revresults = transcript(rev)
   for r in revresults:
     if r not in results:
@@ -22,7 +22,7 @@ def orf():
     fout.write(r + '\n')
   fout.close()
 
-def reverse_compliment_RNA(data):
+def reverse_complement_RNA(data):
   revcomp = ""
   switch = {
     'A': 'U',

@@ -1,6 +1,6 @@
 def revp():
-  fin = open("rosalind_revp.txt")
-  DNA = ""
+  fin = open("rosalind_sseq.txt")
+  first = ""
   for line in fin:
     line = line.replace('\n', '')
     if line[0] == '>':
@@ -19,7 +19,7 @@ def revp():
 
       seg = DNA[index:index+seglen]
 
-      if seg == reverse_compliment_DNA(seg):
+      if seg == reverse_complement_DNA(seg):
         position = index+1
         results.append((position,seglen))
 
@@ -28,7 +28,7 @@ def revp():
     fout.write(str(pos) + " " + str(length) + '\n')
   fout.close() 
 
-def reverse_compliment_DNA(data):
+def reverse_complement_DNA(data):
   revcomp = ""
   switch = {
     'A': 'T',
