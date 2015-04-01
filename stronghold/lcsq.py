@@ -44,8 +44,8 @@ def lcsq():
 
   longest = ""
 
-  x=len(s2)
-  y=len(s1)
+  x = len(s2)
+  y = len(s1)
 
   while (True):
     if y == 0 or x == 0:
