@@ -21,9 +21,3 @@ def perm(n):
   for i in perm_strings:
     fout.write(i + '\n')
   fout.close()
-
-
-
-
-
-
