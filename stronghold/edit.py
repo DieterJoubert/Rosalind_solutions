@@ -8,7 +8,6 @@ def edit():
     line = line.replace('\n', '')
     if line[0] == '>':
       stringcount += 1
-      continue
     else:
       if stringcount == 1:
         s2 += line

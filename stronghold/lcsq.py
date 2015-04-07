@@ -63,29 +63,3 @@ def lcsq():
   fout = open("out.txt","w")
   fout.write( longest )
   fout.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
