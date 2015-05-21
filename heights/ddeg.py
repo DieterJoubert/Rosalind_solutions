@@ -1,7 +1,7 @@
 import Queue
 
-def deg():
-  fin = open("rosalind_deg.txt")
+def ddeg():
+  fin = open("rosalind_ddeg.txt")
   first_read = False
 
   graph = {}
@@ -24,12 +24,20 @@ def deg():
 
   neighbor_count = []
 
+
   for node, neighbors in graph.items():
-    neighbor_count.insert( node-1, len(neighbors) )
+    print neighbors
+    neighbor_sum = 0
+    for n in neighbors:
+      neighbor_sum += len(graph[n])
+    neighbor_count.insert( node-1, neighbor_sum )
+
+  print neighbor_count
+
 
   fout = open("out.txt","w")
   fout.write(" ".join(map(str, neighbor_count)))
   fout.close()
 
 if __name__ == '__main__':
-  deg()
+  ddeg()
