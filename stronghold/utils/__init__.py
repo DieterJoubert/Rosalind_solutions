@@ -1,1 +1,1 @@
-from .data_utils import get_dna_data, write_solution
+from .data_utils import get_dna_data, write_solution, get_codon_table
