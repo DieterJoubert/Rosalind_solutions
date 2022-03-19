@@ -14,7 +14,7 @@ def get_overlap(dna1, dna2):
 
     return best_overlap
 
-def get_foo(dna_strings):
+def get_superstring(dna_strings):
     strings_left = set(dna_strings[1:])
 
     super = dna_strings[0]
@@ -49,7 +49,7 @@ def write_solution(superstring):
 
 def main():
     data = get_fasta_data(DATA_SRC)
-    superstring = get_foo(list(data.values()))
+    superstring = get_superstring(list(data.values()))
     write_solution(superstring)
 
 if __name__ == '__main__':
