@@ -1,5 +1,3 @@
-from utils import get_monoisotopic_mass_table
-
 DATA_SRC = './data/rosalind_lexf.txt'
 OUTPUT_SRC = './output/prob_lexf.txt'
 
@@ -18,7 +16,7 @@ def get_permutations(symbols, n):
                 next_iter.append(perm + s)
         perms = next_iter
 
-    return perms
+    return sorted(perms)
 
 def write_solution(perms):
     f = open(OUTPUT_SRC, "w")
@@ -28,7 +26,7 @@ def write_solution(perms):
 
 def main():
     symbols, n = get_data()
-    perms = sorted(get_permutations(symbols, n))
+    perms = get_permutations(symbols, n)
     write_solution(perms)
 
 if __name__ == '__main__':
