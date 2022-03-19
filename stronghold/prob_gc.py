@@ -1,19 +1,4 @@
-def get_fasta_data():
-    data = {}
-    with open('./data/rosalind_gc.txt') as f:
-        lines = f.read().splitlines()
-
-        curr_id, curr_content = None, ''
-
-        for line in lines:
-            if line[0] == '>':
-                if curr_id:
-                    data[curr_id] = curr_content
-                    curr_content = ''
-                curr_id = line[1:]
-            else:
-                curr_content += line
-    return data
+from utils import get_fasta_data
 
 def get_gc_content(dna: str) -> float:
     count = 0
@@ -38,7 +23,7 @@ def write_solution(id: str, gc_content: float):
     f.close()
 
 def main():
-    data = get_fasta_data()
+    data = get_fasta_data('./data/rosalind_gc.txt')
     id_to_gc_content = get_id_to_gc_content(data)
     soln_id = get_id_of_max(id_to_gc_content)
     write_solution(soln_id, id_to_gc_content[soln_id])

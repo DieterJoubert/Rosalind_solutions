@@ -23,3 +23,20 @@ def get_codon_table():
                     continue
                 table[line[idx]] = line[idx+1]
     return table
+
+def get_fasta_data(src: str):
+    data = {}
+
+    with open(src) as f:
+        lines = f.read().splitlines()
+
+        curr_id = None
+
+        for line in lines:
+            if line[0] == '>':
+                curr_id = line[1:]
+                data[curr_id] = ''
+            else:
+                data[curr_id] += line
+
+    return data
