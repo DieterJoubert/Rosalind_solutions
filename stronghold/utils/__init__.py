@@ -1,1 +1,1 @@
-from .data_utils import get_dna_data, write_solution, get_codon_table, get_fasta_data
+from .data_utils import get_dna_data, write_solution, get_codon_table, get_fasta_data, get_monoisotopic_mass_table

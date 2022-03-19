@@ -1,6 +1,7 @@
 from typing import List
 
 CODON_TABLE_SRC = './data/rna_codon_table.txt'
+MONOISOTOPIC_MASS_TABLE_SRC = './data/monoisotopic_mass_table.txt'
 
 def get_dna_data(src: str) -> str:
     with open(src) as f:
@@ -22,6 +23,14 @@ def get_codon_table():
                 if idx % 2 != 0:
                     continue
                 table[line[idx]] = line[idx+1]
+    return table
+
+def get_monoisotopic_mass_table():
+    table = {}
+    with open(MONOISOTOPIC_MASS_TABLE_SRC) as f:
+        lines = map(lambda x: x.split(), f.read().splitlines())
+        for line in lines:
+            table[line[0]] = float(line[1])
     return table
 
 def get_fasta_data(src: str):
