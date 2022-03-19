@@ -1,6 +1,5 @@
 from utils import get_fasta_data
-
-VALID_DNA_SYMBOLS = {'A', 'C', 'G', 'T'}
+from constants import VALID_DNA_SYMBOLS
 
 DATA_SRC = './data/rosalind_cons.txt'
 

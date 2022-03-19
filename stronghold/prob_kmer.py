@@ -39,6 +39,5 @@ def main():
     composition = get_kmer_composition(k, dna, kmers)
     write_solution(composition)
 
-
 if __name__ == '__main__':
     main()

@@ -1,11 +1,5 @@
 from utils import get_dna_data, write_solution
-
-COMPLEMENT_MAP = {
-    'A': 'T',
-    'T': 'A',
-    'C': 'G',
-    'G': 'C'
-}
+from constants import COMPLEMENT_MAP
 
 def get_reverse_complement(dna: str) -> str:
     return "".join([COMPLEMENT_MAP[c] for c in dna[::-1]])

@@ -1,4 +1,4 @@
-VALID_DNA_SYMBOLS = {'A', 'C', 'G', 'T'}
+from constants import VALID_DNA_SYMBOLS
 
 def get_data() -> str:
     with open('./data/rosalind_dna.txt') as f:
