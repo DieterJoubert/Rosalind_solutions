@@ -53,6 +53,5 @@ def main():
     connect_component_coloring = get_connected_component_coloring(n, tree)
     print(max(connect_component_coloring.values()) - 1)
 
-
 if __name__ == '__main__':
     main()
