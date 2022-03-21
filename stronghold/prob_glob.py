@@ -1,21 +1,9 @@
-from utils import get_fasta_data_array
+from utils import get_fasta_data_array, get_blosum62_scoring_matrix
 
 DATA_PATH = './data/rosalind_glob.txt'
-BLOSUM_PATH = './data/blosum62.txt'
 OUTPUT_PATH = './output/prob_glob.txt'
 
 GAP_PENALTY = -5
-
-def get_blosum62_scoring_matrix():
-    matrix = {}
-    with open(BLOSUM_PATH) as f:
-        lines = f.read().splitlines()
-        header = lines[0].split()
-        content = [line.split()[1:] for line in lines[1:]]
-        for i in range(len(header)):
-            for j in range(len(header)):
-                matrix[(header[i], header[j])] = int(content[i][j])
-        return matrix
 
 def get_global_alignment_matrix(s: str, t: str, blosum_scoring, gap_penalty: int):
     matrix = [[0 for _ in range(len(t)+1)] for _ in range(len(s)+1)]
