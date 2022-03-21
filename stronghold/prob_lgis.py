@@ -1,8 +1,8 @@
-DATA_SRC = './data/rosalind_lgis.txt'
-OUTPUT_SRC = './output/prob_lgis.txt'
+DATA_PATH = './data/rosalind_lgis.txt'
+OUTPUT_PATH = './output/prob_lgis.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return [int(lines[0]), list(map(lambda x: int(x), lines[1].split()))]
 
@@ -44,7 +44,7 @@ def get_longest_decreasing(perm):
     return lds
 
 def write_solution(lis, lds):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     f.write(" ".join(map(lambda x: str(x), lis)) + "\n")
     f.write(" ".join(map(lambda x: str(x), lds)) + "\n")
     f.close()

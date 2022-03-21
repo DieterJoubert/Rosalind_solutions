@@ -1,9 +1,9 @@
 from typing import List
 
-DATA_SRC = './data/rosalind_fibd.txt'
+DATA_PATH = './data/rosalind_fibd.txt'
 
 def get_data() -> List[int]:
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return map(lambda x: int(x), lines[0].split())
 

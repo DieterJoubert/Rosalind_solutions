@@ -1,9 +1,9 @@
 from utils import get_monoisotopic_mass_table
 
-DATA_SRC = './data/rosalind_prtm.txt'
+DATA_PATH = './data/rosalind_prtm.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return lines[0]
 

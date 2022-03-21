@@ -1,7 +1,7 @@
 from utils import get_fasta_data
 
-DATA_SRC = './data/rosalind_long.txt'
-OUTPUT_SRC = './output/prob_long.txt'
+DATA_PATH = './data/rosalind_long.txt'
+OUTPUT_PATH = './output/prob_long.txt'
 
 def get_overlap(dna1, dna2):
     min_length = min(len(dna1), len(dna2))
@@ -43,12 +43,12 @@ def get_superstring(dna_strings):
     return super
 
 def write_solution(superstring):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     f.write(superstring)
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_SRC)
+    data = get_fasta_data(DATA_PATH)
     superstring = get_superstring(list(data.values()))
     write_solution(superstring)
 

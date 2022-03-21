@@ -1,10 +1,10 @@
 from typing import List
 
-DATA_SRC = './data/rosalind_subs.txt'
-OUTPUT_SRC = "./output/prob_subs.txt"
+DATA_PATH = './data/rosalind_subs.txt'
+OUTPUT_PATH = "./output/prob_subs.txt"
 
 def get_data() -> List[str]:
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return lines
 
@@ -18,7 +18,7 @@ def find_substring_indices(s: str, t: str):
     return positions
 
 def write_solution(positions):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     f.write(" ".join(map(lambda x: str(x + 1), positions)))
     f.close()
 

@@ -1,7 +1,8 @@
 from utils import get_fasta_data
 from constants import VALID_DNA_SYMBOLS
 
-DATA_SRC = './data/rosalind_cons.txt'
+DATA_PATH = './data/rosalind_cons.txt'
+OUTPUT_PATH = './output/prob_cons.txt'
 
 def get_profile(data):
     dna_length = len(list(data.values())[0])
@@ -30,7 +31,7 @@ def get_consensus(profile):
     return consensus
 
 def write_solution(profile, consensus):
-    f = open("./output/prob_cons.txt", "w")
+    f = open(OUTPUT_PATH, "w")
     f.write(consensus + '\n')
     for c in VALID_DNA_SYMBOLS:
         count_str = " ".join(map(lambda x: str(x), profile[c]))
@@ -38,7 +39,7 @@ def write_solution(profile, consensus):
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_SRC)
+    data = get_fasta_data(DATA_PATH)
     profile = get_profile(data)
     consensus = get_consensus(profile)
     write_solution(profile, consensus)

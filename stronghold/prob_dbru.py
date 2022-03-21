@@ -1,10 +1,10 @@
 from prob_revc import get_reverse_complement
 
-DATA_SRC = './data/rosalind_dbru.txt'
-OUTPUT_SRC = './output/prob_dbru.txt'
+DATA_PATH = './data/rosalind_dbru.txt'
+OUTPUT_PATH = './output/prob_dbru.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return lines
 
@@ -28,7 +28,7 @@ def get_debruijn_adjacency_list(k_plus_one_set):
     return sorted(list(adj_list))
 
 def write_solution(adjacency_list):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     for item in adjacency_list:
         f.write(f'({item[0]}, {item[1]}) \n')
     f.close()

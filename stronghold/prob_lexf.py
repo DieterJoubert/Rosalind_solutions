@@ -1,8 +1,8 @@
-DATA_SRC = './data/rosalind_lexf.txt'
-OUTPUT_SRC = './output/prob_lexf.txt'
+DATA_PATH = './data/rosalind_lexf.txt'
+OUTPUT_PATH = './output/prob_lexf.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return lines[0].split(), int(lines[1])
 
@@ -19,7 +19,7 @@ def get_permutations(symbols, n):
     return sorted(perms)
 
 def write_solution(perms):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     for perm in perms:
         f.write(perm + "\n")
     f.close()

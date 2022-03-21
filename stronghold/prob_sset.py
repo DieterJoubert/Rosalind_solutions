@@ -1,7 +1,7 @@
-DATA_SRC = './data/rosalind_sset.txt'
+DATA_PATH = './data/rosalind_sset.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return int(lines[0])
 

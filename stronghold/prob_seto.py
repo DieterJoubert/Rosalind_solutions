@@ -1,13 +1,13 @@
-DATA_SRC = './data/rosalind_seto.txt'
-OUTPUT_SRC = './output/prob_seto.txt'
+DATA_PATH = './data/rosalind_seto.txt'
+OUTPUT_PATH = './output/prob_seto.txt'
 
 def get_data():
-    with open(DATA_SRC) as f:
+    with open(DATA_PATH) as f:
         lines = f.read().splitlines()
         return int(lines[0]), eval(lines[1]), eval(lines[2])
 
 def write_solution(sets):
-    f = open(OUTPUT_SRC, "w")
+    f = open(OUTPUT_PATH, "w")
     for set in sets:
         f.write(str(set) + "\n")
     f.close()
