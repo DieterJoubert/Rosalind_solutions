@@ -40,7 +40,6 @@ def get_three_sum_indices(nums):
 def main():
     data = get_data()
     all_three_sum_indices = list(map(get_three_sum_indices, data))
-    print(all_three_sum_indices)
     write_solution(all_three_sum_indices)
 
 if __name__ == '__main__':
