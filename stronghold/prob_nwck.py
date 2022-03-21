@@ -1,4 +1,4 @@
-DATA_PATH = './data/rosalind_nwck.txt'
+INPUT_PATH = './input/rosalind_nwck.txt'
 OUTPUT_PATH = './output/prob_nwck.txt'
 
 #https://github.com/jarecot/Rosalind/blob/master/scripts/Newick_Trees.py
@@ -6,7 +6,7 @@ OUTPUT_PATH = './output/prob_nwck.txt'
 #TODO
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = [x for x in f.read().splitlines() if x]
         return lines
 

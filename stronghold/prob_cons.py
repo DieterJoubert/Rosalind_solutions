@@ -1,7 +1,7 @@
 from utils import get_fasta_data
 from constants import VALID_DNA_SYMBOLS
 
-DATA_PATH = './data/rosalind_cons.txt'
+INPUT_PATH = './input/rosalind_cons.txt'
 OUTPUT_PATH = './output/prob_cons.txt'
 
 def get_profile(data):
@@ -39,7 +39,7 @@ def write_solution(profile, consensus):
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_PATH)
+    data = get_fasta_data(INPUT_PATH)
     profile = get_profile(data)
     consensus = get_consensus(profile)
     write_solution(profile, consensus)

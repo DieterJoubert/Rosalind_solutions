@@ -1,10 +1,10 @@
 from typing import List
 
-DATA_PATH = './data/rosalind_subs.txt'
+INPUT_PATH = './input/rosalind_subs.txt'
 OUTPUT_PATH = "./output/prob_subs.txt"
 
 def get_data() -> List[str]:
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines
 

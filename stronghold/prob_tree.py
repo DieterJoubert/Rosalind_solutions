@@ -2,10 +2,10 @@ from tkinter import X
 from typing import List
 from collections import deque
 
-DATA_PATH = './data/rosalind_tree.txt'
+INPUT_PATH = './input/rosalind_tree.txt'
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         n = int(lines[0])
         adjacency_list = []

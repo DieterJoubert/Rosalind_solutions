@@ -1,7 +1,9 @@
 from constants import VALID_DNA_SYMBOLS
 
+INPUT_PATH = './input/rosalind_dna.txt'
+
 def get_data() -> str:
-    with open('./data/rosalind_dna.txt') as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines[0]
 

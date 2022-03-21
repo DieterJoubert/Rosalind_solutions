@@ -1,4 +1,4 @@
-DATA_PATH = './data/rosalind_trie.txt'
+INPUT_PATH = './input/rosalind_trie.txt'
 OUTPUT_PATH = './output/prob_trie.txt'
 
 class Trie:
@@ -24,7 +24,7 @@ class Trie:
                 pointer = self.max_node
     
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines
 

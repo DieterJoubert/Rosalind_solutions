@@ -17,7 +17,7 @@ def translate_rna_to_protein(rna: str, codon_table: Dict[str, str]):
     return protein
 
 def main():
-    data = get_dna_data('./data/rosalind_prot.txt')
+    data = get_dna_data('./input/rosalind_prot.txt')
     codon_table = get_codon_table()
     protein = translate_rna_to_protein(data, codon_table)
     print(protein)

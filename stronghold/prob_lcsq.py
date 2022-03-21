@@ -1,6 +1,6 @@
 from utils import get_fasta_data
 
-DATA_PATH = './data/rosalind_lcsq.txt'
+INPUT_PATH = './input/rosalind_lcsq.txt'
 
 def get_lcs_matrix(s, t):
     matrix = [[0 for _ in range(len(t)+1)] for _ in range(len(s)+1)]
@@ -37,7 +37,7 @@ def get_subsequence_from_matrix(s, t, matrix):
     return result
 
 def main():
-    dna_strings = list(get_fasta_data(DATA_PATH).values())
+    dna_strings = list(get_fasta_data(INPUT_PATH).values())
     s, t = dna_strings
     lcs_matrix = get_lcs_matrix(s, t)
     lcs = get_subsequence_from_matrix(s, t, lcs_matrix)

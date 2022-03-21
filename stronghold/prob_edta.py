@@ -1,7 +1,7 @@
 from utils import get_fasta_data_array
 from prob_edit import get_edit_distance_matrix, get_edit_distance_from_matrix
 
-DATA_PATH = './data/rosalind_edta.txt'
+INPUT_PATH = './input/rosalind_edta.txt'
 OUTPUT_PATH = './output/prob_edta.txt'
 
 def get_optimal_alignments(s, t, matrix):
@@ -52,7 +52,7 @@ def write_solution(edit_distance: int, s_aligned: str, t_aligned: str):
     f.close()
 
 def main():
-    s, t = [x[1] for x in get_fasta_data_array(DATA_PATH)]
+    s, t = [x[1] for x in get_fasta_data_array(INPUT_PATH)]
     edit_matrix = get_edit_distance_matrix(s, t)
     edit_distance = get_edit_distance_from_matrix(edit_matrix)
     s_aligned, t_aligned = get_optimal_alignments(s, t, edit_matrix)

@@ -1,6 +1,6 @@
 from utils import get_fasta_data_array, get_blosum62_scoring_matrix
 
-DATA_PATH = './data/rosalind_glob.txt'
+INPUT_PATH = './input/rosalind_glob.txt'
 OUTPUT_PATH = './output/prob_glob.txt'
 
 GAP_PENALTY = -5
@@ -28,7 +28,7 @@ def get_max_alignment_score(matrix):
     return matrix[len(matrix)-1][len(matrix[0])-1]
 
 def main():
-    s, t = [x[1] for x in get_fasta_data_array(DATA_PATH)]
+    s, t = [x[1] for x in get_fasta_data_array(INPUT_PATH)]
     blosum_scoring_matrix = get_blosum62_scoring_matrix()
     global_alignment_matrix = get_global_alignment_matrix(s, t, blosum_scoring_matrix, GAP_PENALTY)
     alignment_score = get_max_alignment_score(global_alignment_matrix)

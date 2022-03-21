@@ -1,6 +1,6 @@
 from utils import get_fasta_data
 
-DATA_PATH = './data/rosalind_gc.txt'
+INPUT_PATH = './input/rosalind_gc.txt'
 OUTPUT_PATH = './output/prob_gc.txt'
 
 def get_gc_content(dna: str) -> float:
@@ -26,7 +26,7 @@ def write_solution(id: str, gc_content: float):
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_PATH)
+    data = get_fasta_data(INPUT_PATH)
     id_to_gc_content = get_id_to_gc_content(data)
     soln_id = get_id_of_max(id_to_gc_content)
     write_solution(soln_id, id_to_gc_content[soln_id])

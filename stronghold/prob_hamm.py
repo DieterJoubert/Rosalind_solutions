@@ -1,7 +1,9 @@
 from typing import List
 
+INPUT_PATH = './input/rosalind_hamm.txt'
+
 def get_data() -> str:
-    with open('./data/rosalind_hamm.txt') as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines
 

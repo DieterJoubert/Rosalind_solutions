@@ -1,8 +1,8 @@
-DATA_PATH = './data/rosalind_rna.txt'
+INPUT_PATH = './input/rosalind_rna.txt'
 OUTPUT_PATH = './output/prob_rna.txt'
 
 def get_data() -> str:
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines[0]
 

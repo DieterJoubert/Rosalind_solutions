@@ -1,6 +1,6 @@
 from utils import get_fasta_data_array
 
-DATA_PATH = './data/rosalind_edit.txt'
+INPUT_PATH = './input/rosalind_edit.txt'
 
 def get_edit_distance_matrix(s, t):
     matrix = [[0 for _ in range(len(t)+1)] for _ in range(len(s)+1)]
@@ -23,7 +23,7 @@ def get_edit_distance_from_matrix(edit_matrix):
     return edit_matrix[len(edit_matrix)-1][len(edit_matrix[0])-1]
 
 def main():
-    s, t = [x[1] for x in get_fasta_data_array(DATA_PATH)]
+    s, t = [x[1] for x in get_fasta_data_array(INPUT_PATH)]
     edit_matrix = get_edit_distance_matrix(s, t)
     edit_distance = get_edit_distance_from_matrix(edit_matrix)
     print(edit_distance)

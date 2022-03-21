@@ -1,8 +1,8 @@
-DATA_PATH = './data/rosalind_lgis.txt'
+INPUT_PATH = './input/rosalind_lgis.txt'
 OUTPUT_PATH = './output/prob_lgis.txt'
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return [int(lines[0]), list(map(lambda x: int(x), lines[1].split()))]
 

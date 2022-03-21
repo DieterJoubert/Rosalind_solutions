@@ -1,7 +1,7 @@
 from typing import List
 
 def get_data() -> List[int]:
-    with open('./data/rosalind_fib.txt') as f:
+    with open('./input/rosalind_fib.txt') as f:
         lines = f.read().splitlines()
         return map(lambda x: int(x), lines[0].split())
 

@@ -1,6 +1,6 @@
 from utils import get_fasta_data
 
-DATA_PATH = './data/rosalind_grph.txt'
+INPUT_PATH = './input/rosalind_grph.txt'
 OUTPUT_PATH = './output/prob_grph.txt'
 
 k = 3
@@ -24,7 +24,7 @@ def write_solution(adjacency_list):
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_PATH)
+    data = get_fasta_data(INPUT_PATH)
     adjacency_list = get_overlap_graph_adjacency_list(data, k)
     write_solution(adjacency_list)
 

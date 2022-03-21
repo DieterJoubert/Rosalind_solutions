@@ -1,6 +1,6 @@
 from utils import get_fasta_data_array
 
-DATA_PATH = './data/rosalind_pdst.txt'
+INPUT_PATH = './input/rosalind_pdst.txt'
 OUTPUT_PATH = './output/prob_pdst.txt'
 
 def write_solution(distance_matrix):
@@ -33,7 +33,7 @@ def get_distance_matrix(dna_strings):
     return matrix
             
 def main():
-    data = get_fasta_data_array(DATA_PATH)
+    data = get_fasta_data_array(INPUT_PATH)
     distance_matrix = get_distance_matrix([x[1] for x in data])
     write_solution(distance_matrix)
 

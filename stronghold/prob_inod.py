@@ -1,7 +1,7 @@
-DATA_PATH = './data/rosalind_inod.txt'
+INPUT_PATH = './input/rosalind_inod.txt'
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return int(lines[0])
 

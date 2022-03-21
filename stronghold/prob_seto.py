@@ -1,8 +1,8 @@
-DATA_PATH = './data/rosalind_seto.txt'
+INPUT_PATH = './input/rosalind_seto.txt'
 OUTPUT_PATH = './output/prob_seto.txt'
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return int(lines[0]), eval(lines[1]), eval(lines[2])
 

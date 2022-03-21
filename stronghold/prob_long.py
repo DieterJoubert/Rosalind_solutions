@@ -1,6 +1,6 @@
 from utils import get_fasta_data
 
-DATA_PATH = './data/rosalind_long.txt'
+INPUT_PATH = './input/rosalind_long.txt'
 OUTPUT_PATH = './output/prob_long.txt'
 
 def get_overlap(dna1, dna2):
@@ -48,7 +48,7 @@ def write_solution(superstring):
     f.close()
 
 def main():
-    data = get_fasta_data(DATA_PATH)
+    data = get_fasta_data(INPUT_PATH)
     superstring = get_superstring(list(data.values()))
     write_solution(superstring)
 

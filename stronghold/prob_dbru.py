@@ -1,10 +1,10 @@
 from prob_revc import get_reverse_complement
 
-DATA_PATH = './data/rosalind_dbru.txt'
+INPUT_PATH = './input/rosalind_dbru.txt'
 OUTPUT_PATH = './output/prob_dbru.txt'
 
 def get_data():
-    with open(DATA_PATH) as f:
+    with open(INPUT_PATH) as f:
         lines = f.read().splitlines()
         return lines
 
