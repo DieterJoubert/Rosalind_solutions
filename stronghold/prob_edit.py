@@ -1,13 +1,6 @@
 from utils import get_fasta_data_array
 
 DATA_PATH = './data/rosalind_edit.txt'
-OUTPUT_PATH = './output/prob_edit.txt'
-
-# def write_solution(perms):
-#     f = open(OUTPUT_SRC, "w")
-#     for perm in perms:
-#         f.write(perm + "\n")
-#     f.close()
 
 def get_edit_matrix(s, t):
     matrix = [[0 for _ in range(len(t)+1)] for _ in range(len(s)+1)]
