@@ -49,3 +49,18 @@ def get_fasta_data(src: str):
                 data[curr_id] += line
 
     return data
+
+def get_fasta_data_array(src: str):
+    data = []
+
+    with open(src) as f:
+        lines = f.read().splitlines()
+
+        for line in lines:
+            if line[0] == '>':
+                id = line[1:]
+                data.append([id, ''])
+            else:
+                data[-1][1] += line
+
+    return data

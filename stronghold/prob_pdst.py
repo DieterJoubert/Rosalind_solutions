@@ -1,20 +1,7 @@
+from utils import get_fasta_data_array
+
 DATA_PATH = './data/rosalind_pdst.txt'
 OUTPUT_PATH = './output/prob_pdst.txt'
-
-def get_fasta_data_array(src: str):
-    data = []
-
-    with open(src) as f:
-        lines = f.read().splitlines()
-
-        for line in lines:
-            if line[0] == '>':
-                id = line[1:]
-                data.append([id, ''])
-            else:
-                data[-1][1] += line
-
-    return data
 
 def write_solution(distance_matrix):
     f = open(OUTPUT_PATH, "w")
@@ -24,7 +11,7 @@ def write_solution(distance_matrix):
 
 def get_difference_percentage(s, t):
     if len(s) != len(t):
-        raise Exception()
+        raise Exception("Strings are not the same length")
 
     diff_count = 0
 
