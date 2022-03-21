@@ -1,4 +1,3 @@
-
 INPUT_PATH = './input/rosalind_fibo.txt'
 
 def get_data() -> int:

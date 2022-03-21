@@ -1,4 +1,4 @@
-from prob_deg import get_data_from_edge_list_format, build_graph_from_adjacency_list
+from prob_deg import get_data_from_edge_list_format, build_undirected_graph_from_adjacency_list
 
 INPUT_PATH = './input/rosalind_ddeg.txt'
 OUTPUT_PATH = './output/prob_ddeg.txt'
@@ -18,7 +18,7 @@ def get_double_degrees(graph):
 
 def main():
     num_vertices, num_edges, adjacency_list = get_data_from_edge_list_format(INPUT_PATH)
-    graph = build_graph_from_adjacency_list(num_vertices, adjacency_list)
+    graph = build_undirected_graph_from_adjacency_list(num_vertices, adjacency_list)
     double_degrees = get_double_degrees(graph)
     write_solution(double_degrees)
 
