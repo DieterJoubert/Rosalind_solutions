@@ -18,12 +18,9 @@ def get_global_alignment_matrix(s: str, t: str, blosum_scoring, gap_penalty: int
             s_symbol = s[s_idx-1]
             t_symbol = t[t_idx-1]
 
-            if s_symbol == t_symbol:
-                matrix[s_idx][t_idx] = matrix[s_idx-1][t_idx-1] + blosum_scoring[(s_symbol, t_symbol)]
-            else:
-                matrix[s_idx][t_idx] = max(matrix[s_idx-1][t_idx-1] + blosum_scoring[(s_symbol, t_symbol)], 
-                                            matrix[s_idx][t_idx-1] + gap_penalty, 
-                                            matrix[s_idx-1][t_idx] + gap_penalty)
+            matrix[s_idx][t_idx] = max(matrix[s_idx-1][t_idx-1] + blosum_scoring[(s_symbol, t_symbol)], 
+                                        matrix[s_idx][t_idx-1] + gap_penalty, 
+                                        matrix[s_idx-1][t_idx] + gap_penalty)
 
     return matrix
 
