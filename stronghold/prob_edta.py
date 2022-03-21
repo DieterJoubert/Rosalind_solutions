@@ -5,9 +5,6 @@ DATA_PATH = './data/rosalind_edta.txt'
 OUTPUT_PATH = './output/prob_edta.txt'
 
 def get_optimal_alignments(s, t, matrix):
-    for row in matrix:
-        print(row)
-
     s_aligned, t_aligned = '', ''
 
     s_idx, t_idx = (len(s), len(t))
