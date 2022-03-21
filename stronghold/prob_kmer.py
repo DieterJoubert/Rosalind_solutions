@@ -7,12 +7,6 @@ OUTPUT_SRC = './output/prob_kmer.txt'
 
 k = 4
 
-def write_solution(perms):
-    f = open(OUTPUT_SRC, "w")
-    for perm in perms:
-        f.write(perm + "\n")
-    f.close()
-
 def get_kmers(k):
     return sorted(get_permutations(VALID_DNA_SYMBOLS, k))
 
