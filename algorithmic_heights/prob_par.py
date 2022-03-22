@@ -11,7 +11,7 @@ def write_solution(array):
     f.write(" ".join(map(str, array)))
     f.close()
 
-def get_two_way_partitioned_array(n, array):
+def get_two_way_partitioned_array(array):
     pivot = array[0]
     low = []
     high = []
@@ -24,10 +24,9 @@ def get_two_way_partitioned_array(n, array):
 
     return low + [pivot] + high
 
-
 def main():
     n, A = get_data()
-    partitioned_array = get_two_way_partitioned_array(n, A)
+    partitioned_array = get_two_way_partitioned_array(A)
     write_solution(partitioned_array)
 
 if __name__ == '__main__':

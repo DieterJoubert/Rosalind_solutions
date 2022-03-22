@@ -1,5 +1,5 @@
-INPUT_PATH = './input/rosalind_par3.txt'
-OUTPUT_PATH = './output/prob_par3.txt'
+INPUT_PATH = './input/rosalind_qs.txt'
+OUTPUT_PATH = './output/prob_qs.txt'
 
 def get_data() -> int:
     with open(INPUT_PATH) as f:
@@ -11,7 +11,10 @@ def write_solution(array):
     f.write(" ".join(map(str, array)))
     f.close()
 
-def get_three_way_partitioned_array(array):
+def quicksort(array):
+    if len(array) < 2:
+        return array
+
     pivot = array[0]
     low = []
     middle = []
@@ -25,12 +28,13 @@ def get_three_way_partitioned_array(array):
         else:
             middle.append(num)
 
-    return low + middle + high
+    return quicksort(low) + middle + quicksort(high)
 
 def main():
     n, A = get_data()
-    partitioned_array = get_three_way_partitioned_array(A)
-    write_solution(partitioned_array)
+    sorted_array = quicksort(A)
+    print(sorted_array)
+    write_solution(sorted_array)
 
 if __name__ == '__main__':
     main()
