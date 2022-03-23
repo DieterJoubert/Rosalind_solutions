@@ -1,4 +1,5 @@
 from utils import read_multiple_edge_list_formats, build_directed_graph_from_adjacency_list
+import copy
 
 INPUT_PATH = './input/rosalind_dag.txt'
 OUTPUT_PATH = './output/prob_dag.txt'
@@ -21,6 +22,8 @@ def get_source_nodes(node_to_incoming_neighbor):
     return [node for (node, incoming_neighbors) in node_to_incoming_neighbor.items() if not incoming_neighbors]
 
 def get_topological_sorting(graph, reverse_graph, source_nodes):
+    graph, reverse_graph = copy.deepcopy(graph), copy.deepcopy(reverse_graph)
+    
     topological_sorting = []
     S = set(source_nodes)
 
